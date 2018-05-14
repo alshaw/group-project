@@ -1,5 +1,5 @@
 const express = require("express"); 
-const commentRouter = express.Router(); 
+const commentRouter = express.Router();
 
 const DrinkModel = require("../models/drinks.js"); 
 const CommentModel = require ("../models/comments.js"); 
