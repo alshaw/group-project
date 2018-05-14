@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "/drinks/";
+const url = "/api/drinks/";
 
 export function getDrinks() {
   return dispatch => {
@@ -20,6 +20,7 @@ export function getDrinks() {
 
 export function addDrink(newDrink) {
   return dispatch => {
+    console.log(newDrink);
     axios
       .post(url, newDrink)
       .then(response => {

@@ -1,56 +1,53 @@
 const express = require("express"); 
 const drinkRouter = express.Router(); 
-
-const DrinkModel = require("../models/drinks.js"); 
+const bodyParser = require("body-parser");
+const Drink = require("../models/drinks.js"); 
 const CommentModel = require ("../models/comments.js"); 
 
-drinkRouter.route("/")
-    .get((req, res)=> {
-        DrinkModel.find(req.query)
-            .populate("commentId")
-            .exec((err, foundDrinks) => {
-                if (err) return res.send(err); 
-                res.status(200).send(foundDrinks)
-            });
-    })
-    .post((req, res) => {
-        const newDrink = new DrinkModel(req.body); 
-        newDrink.save((err, savedDrink) => {
-            if (err) return res.send(err); 
-            DrinkModel.populate(savedDrink, { path: "commentId "}, (err, popDrink) => {
-                if(err) return res.send(err); 
-                res.status(201).send(popDrink)
-            });
-        });
+drinkRouter.get("/", (req, res) => {
+  Drink.find()
+    .populate("comments")
+    .exec((err, drinks) => {
+      if (err) return res.status(500).send(err);
+      return res.send(drinks);
     });
+});
 
-drinkRouter.route("/:id")
-    .get((req, res) => {
-        DrinkModel.findOne({ _id: req.params.id })
-            .populate("drinkId")
-            .exec((err, foundDrink) => {
-                if (err) return res.send(err); 
-                if(!foundDrink) return res.status(404).send({ message: "Drink Not Found" })
-                res.status(200).send(foundDrink)
-            })
-    })
+drinkRouter.post("/", (req, res) => {
+  console.log(req.body);
+  const newDrink = new Drink(req.body);
+  newDrink.save(err => {
+    if (err) return res.status(500).send(err);
+    return res.send(newDrink);
+  });
+});
 
-    .delete((req, res) => {
-        DrinkModel.findOneAndRemove({ _id: req.params.id }, (err, deletedDrink) => {
-            if(err) return res.send(err); 
-            if(!deletedDrink) return res.status(404).send({ message: "Drink Not Found"})
-            res.status(204).send(); 
-        })
-    })
+drinkRouter.get("/:id", (req, res) => {
+  Drink.findById(req.params.id)
+    .populate("comments")
+    .exec((err, drink) => {
+      if (err) return res.status(500).send(err);
+      return res.send(drink);
+    });
+});
 
-    .put((req, res) => {
-        DrinkModel.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
-            // .populate("commentId")
-            .exec((err, updatedDrink) => {
-                if (err) return res.send(err);
-                if (!updatedDrink) return res.status(404).send({ message: "Drink Not Found" });
-                res.status(200).send(updatedDrink);
-            })
-    })
+drinkRouter.put("/:id", (req, res) => {
+  Drink.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedDrink) => {
+      if (err) return res.status(500).send(err);
+      return res.send(updatedDrink);
+    }
+  );
+});
+
+drinkRouter.delete("/:id", (req, res) => {
+  Drink.findByIdAndRemove(req.params.id, (err, removedDrink) => {
+    if (err) return res.status(500).send(err);
+    return res.send(removedDrink);
+  });
+});
 
 module.exports = drinkRouter;
