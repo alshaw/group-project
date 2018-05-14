@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Playfair+Display+SC|Vast+Shadow');
+
+.header {
+    display: grid;
+    grid-template-areas: "ttl" "nav";
+    grid-template-rows: .8fr .2fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 40px;
+    
+}
+.title {
+    display: grid;
+    grid-area: ttl;
+    font-family: 'Vast Shadow', cursive;
+    /* background:  */
+    background-repeat: no-repeat;
+    /* color:  */
+    /* font-size:  */
+}
+
+nav {
+    display: grid;
+    font-family: 'Playfair Display', serif;
+    color: rgb(85, 85, 85);
+    background-color: black;
+
+}
+footer {
+    font-family: 'Playfair Display', serif;
+    /* font-size:  */
+    /* color: */
+    /* background:  */
+}
+.homeWrapper {
+    /* background: ; */
+    background-repeat: no-repeat;
+
+}
