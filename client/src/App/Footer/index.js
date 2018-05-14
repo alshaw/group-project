@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 function Footer (props){
     return (
         <footer>
-            {/* content */}
+            <h3>the customizable bartending tool</h3>
         </footer>
     )
 }
