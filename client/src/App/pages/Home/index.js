@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function Home(props){
     return(
-        <div>
+        <div className = "homeWrapper">
            {/* content, links, video, etc. */}
         </div>
     )
