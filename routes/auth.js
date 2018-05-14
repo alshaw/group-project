@@ -12,9 +12,10 @@ authRouter.post("/signup", (req, res) => {
         }
         const newUser = new User(req.body);
         newUser.save((err, user) => {
-            if (err) return res.status(500).send({success: false, err});
-            const token = jwt.sign(user.toObject(), process.env.SECRET);
-            return res.status(201).send({success: true, user: user.toObject(), token});
+            if (err) throw (err);
+            if (!match) res.status(401).send({ success: false, message: "Incorrect password" });
+            const token = jwt.sign(user.toObject(), process.env.SECRET, { expiresIn: "24h" });
+            res.send({ token: token, user: user.toObject(), success: true, message: "Here's your token!" }); 
         });
     });
 });
@@ -25,8 +26,8 @@ authRouter.post("/login", (req, res) => {
         if (!user || user.password !== req.body.password) {
             return res.status(403).send({success: false, err: "Email or password are incorrect"})
         }
-        const token = jwt.sign(user.toObject(), process.env.SECRET);
-        return res.send({token: token, user: user.toObject(), success: true})
+        const token = jwt.sign(user.toObject(), process.env.SECRET, {expiresIn: "24h"});  
+    res.send({user: user.withoutPassword(),token: token, success: true, message: "Here's your token!"}); 
     });
 });
 

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Drinks from "./pages/Drinks";
 import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
+import Form from "./Form";
 
 function App(props){
     return (
@@ -20,6 +21,7 @@ function App(props){
                     
                 </Switch>  
             </div>
+            <Form></Form>
             <Footer></Footer> 
         </div> 
     )
