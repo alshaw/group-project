@@ -3,7 +3,7 @@ import React from "react";
 
 function Favorites(props) {
     return (
-        <div>
+        <div className = ".body-wrapper">
             {/* Components */}
         </div>
     )

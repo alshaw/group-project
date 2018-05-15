@@ -5,44 +5,104 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Playfair+Display+SC|Vast+Shadow');
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
-.header {
+.mainHeader {
     display: grid;
     grid-template-areas: "ttl" "nav";
     grid-template-rows: .8fr .2fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    height: 40px;
-    
+    grid-template-columns: 1fr;
+    height: 100px;
+    position: relative;
+    width: 100%;
+    background: url("./woodBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .9;
 }
 .title {
     display: grid;
     grid-area: ttl;
     font-family: 'Vast Shadow', cursive;
-    /* background:  */
-    background-repeat: no-repeat;
-    /* color:  */
-    /* font-size:  */
+    color: black;
+    font-size: 32px;
+    position: absolute;
+    text-align: right;
+    left: 10%;
+    padding-top: 5px;
 }
 
 nav {
     display: grid;
+    grid-area: nav;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     font-family: 'Playfair Display', serif;
-    color: rgb(85, 85, 85);
+    /* color: rgb(85, 85, 85); */
     background-color: black;
-
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 14px; 
+    bottom: 0;
 }
+.home {
+    display: grid;
+    grid-column: 1/4;
+    color: silver;
+    text-decoration: none;
+    
+}
+.home:hover {
+    color: #D2E3F6;
+  }
+.addDrink {
+    display: grid;
+    grid-column: 4/7;
+    color: silver;
+    text-decoration: none;
+}
+.addDrink:hover {
+    color: #D2E3F6;
+  }
+.favorites {
+    display: grid;
+    grid-column: 7/10;
+    color: silver;
+    text-decoration: none;
+}
+.favorites:hover {
+    color: #D2E3F6;
+  }
+.login {
+    display: grid;
+    grid-column: 10/13;
+    color: silver;
+    text-decoration: none;
+}
+.login:hover {
+    color: #D2E3F6;
+  }
 footer {
     font-family: 'Playfair Display', serif;
-    /* font-size:  */
-    /* color: */
-    /* background:  */
+    color: silver;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 16px; 
+    text-align: right;
+    padding-right: 5px;
+    height: 50px;
+    padding-top: 20px;
 }
-.homeWrapper {
-    background: url("steel.jpg");
+.body-wrapper {
+    background: url("./steel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: auto;
-
+    display: flex;
+    flex-flow: column;
+    margin-top: 0px;
+    padding-bottom: 30px;
 }
 
 .input {
@@ -102,9 +162,10 @@ input[type=submit] {
   border-radius: 5px;
 }
 
-.body-wrapper {
-  display: flex;
-  flex-flow: column;
-  margin-top: 75px;
-  margin-bottom: 210px;
+.ui.cards {
+    padding-left: 4%;
+    
+}
+.ui.card {
+    margin-bottom: 10px;
 }
