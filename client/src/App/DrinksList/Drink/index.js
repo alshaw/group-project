@@ -50,6 +50,7 @@ class Drink extends Component {
                 <Button onClick={this.toggleEdit}>Edit</Button>
                 <Button.Or />
                 <Button onClick={() => deleteDrink(_id)}>Delete</Button>
+
               </Button.Group>
             </a>
           </Card.Content>
