@@ -84,16 +84,15 @@ class EditForm extends Component {
         />
         <input
           onChange={this.handleChange}
-    g      name="ingredients"
+          name="ingredients"
           value={ingredients}
           type="text"
           placeholder="ingredients"
         />
         <button className="submit">Save Changes</button>
-      </form>;
-
+      </form>
+    );
   }
 }
-
 
 export default connect(null, { addDrink, editDrink })(EditForm);
