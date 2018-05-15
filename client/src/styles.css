@@ -74,3 +74,26 @@ input[type=submit] {
 .submit:hover {
   background-color: #D2E3F6;
 }
+
+.drink-component {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+}
+
+.edit-form {
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.body-wrapper {
+  display: flex;
+  flex-flow: column;
+  margin-top: 75px;
+  margin-bottom: 210px;
+}
