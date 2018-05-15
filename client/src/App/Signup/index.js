@@ -3,7 +3,7 @@ import SignupDisplay from "./SignupDisplay";
 import {signup} from "../../redux/auth";
 import {connect} from "react-redux";
 
-class SignupDisplay extends Component {
+class Signup extends Component {
     constructor() {
         super();
         this.state = {
@@ -56,7 +56,7 @@ class SignupDisplay extends Component {
         }
 
         return (
-            <SignupForm 
+            <SignupDisplay
             handleChange={this.handleChange.bind(this)} 
             handleSubmit={this.handleSubmit.bind(this)}
             {...this.state.inputs} errMsg = {errMsg} />
@@ -64,5 +64,5 @@ class SignupDisplay extends Component {
     }
 }
 
-export default connect(state => state.user, {signup})(SignupDisplay);
+export default connect(state => state.user, {signup})(Signup);
 

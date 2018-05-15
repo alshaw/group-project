@@ -5,8 +5,7 @@ import Footer from "./Footer";
 import Home from "./pages/Home";
 import AddDrinks from "./pages/AddDrinks";
 import Favorites from "./pages/Favorites";
-import Signup from "./Signup";
-import Form from "./Form";
+import Signup from "./Signup/";
 
 function App(props){
     return (
@@ -15,9 +14,9 @@ function App(props){
             <div>
                 <Switch>
                     <Route exact path = "/" component = {Home}></Route>
-                    <Route path = "/Drinks" component = {AddDrinks}></Route>
-                    <Route path = "/Favorites" component = {Favorites}></Route>
-                    <Route path = "/Login" component = {Login}></Route>
+                    <Route path = "/drinks" component = {AddDrinks}></Route>
+                    <Route path = "/favorites" component = {Favorites}></Route>
+                    <Route path = "/signup" component = {Signup}></Route>
                 </Switch>  
             </div>
             <Footer></Footer> 
