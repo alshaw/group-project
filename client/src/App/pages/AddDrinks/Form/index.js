@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addDrink } from "../../redux/drinks";
+import { addDrink } from "../../../../redux/drinks";
 import FormDisplay from "./FormDisplay";
 
 

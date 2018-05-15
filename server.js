@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(logger);
 app.use(express.static(path.join(__dirname, "client", "build")))
 
-app.use("/api", expressJwt({secret: process.env.SECRET})); 
+// app.use("/api", expressJwt({secret: process.env.SECRET})); 
 app.use("/api/drinks", drinkRouter);
 app.use("/api/comments", commentRouter);
 app.use("/api/users", userRouter);
