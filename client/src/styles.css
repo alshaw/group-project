@@ -12,7 +12,7 @@
     height: 100px;
     position: relative;
     width: 100%;
-    background: url("./woodBackground.jpg");
+    background: url("./steel.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     opacity: .9;
@@ -34,7 +34,6 @@ nav {
     grid-area: nav;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     font-family: 'Playfair Display', serif;
-    /* color: rgb(85, 85, 85); */
     background-color: black;
     width: 100%;
     position: absolute;
@@ -93,7 +92,7 @@ footer {
     padding-top: 20px;
 }
 .body-wrapper {
-    background: url("./steel.jpg");
+    background: url("./woodBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -160,4 +159,27 @@ input[type=submit] {
 }
 .ui.card {
     margin-bottom: 10px;
+}
+
+@media (min-width: 600px) {
+    nav {
+        text-align: right;
+        padding-right: 10px;
+    }
+    .home {
+        display: grid;
+        grid-column: 5/7;
+    }
+    .addDrink {
+        display: grid;
+        grid-column: 7/9;  
+    }
+    .favorites {
+        display: grid;
+        grid-column: 9/11;   
+    }
+    .login {
+        display: grid;
+        grid-column: 11/13;    
+    }
 }
