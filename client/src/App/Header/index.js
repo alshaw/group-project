@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 
 function Header(props){
     return (
-        <div className = "header">
-            <div className = "title">the blender</div>
+        <div className = "mainHeader">
+            <div className = "title">the<br />blender</div>
             <nav>
                 <Link to = "/" className = "home">home</Link>
                 <Link to = "drinks" className = "addDrink">add drink</Link>
