@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Home from "./pages/Home";
 import Drinks from "./pages/Drinks";
 import Favorites from "./pages/Favorites";
-import Login from "./pages/Login";
+import Signup from "./Signup";
 import Form from "./Form";
 
 function App(props){
