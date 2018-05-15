@@ -59,40 +59,17 @@ class EditForm extends Component {
 
   render() {
     const { name, img, glass, ingredients, directions } = this.state.inputs;
-    return (
-      <form className="edit-form" onSubmit={this.handleSubmit}>
-        <input
-          onChange={this.handleChange}
-          name="name"
-          value={name}
-          type="text"
-          placeholder="name"
-        />
-        <input
-          onChange={this.handleChange}
-          name="img"
-          value={img}
-          type="text"
-          placeholder="Img"
-        />
-        <input
-          onChange={this.handleChange}
-          name="glass"
-          value={glass}
-          type="text"
-          placeholder="Glass"
-        />
-        <input
-          onChange={this.handleChange}
-          name="ingredients"
-          value={ingredients}
-          type="text"
-          placeholder="ingredients"
-        />
+    return <form className="edit-form" onSubmit={this.handleSubmit}>
+        <input onChange={this.handleChange} name="name" value={name} type="text" placeholder="name" />
+        <input onChange={this.handleChange} name="img" value={img} type="text" placeholder="Img" />
+        <input onChange={this.handleChange} name="glass" value={glass} type="text" placeholder="Glass" />
+        <input onChange={this.handleChange} name="ingredients" value={ingredients} type="text" placeholder="ingredients" />
+        <input onChange={this.handleChange} name="directions" value={directions} type="text" placeholder="directions" />
         <button className="submit">Save Changes</button>
-      </form>
-    );
+      </form>;
+
   }
 }
+
 
 export default connect(null, { addDrink, editDrink })(EditForm);

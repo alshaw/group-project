@@ -40,7 +40,6 @@ export function addDrink(newDrink) {
 export function editDrink(editedDrink, id) {
   return dispatch => {
     console.log(editedDrink);
-    debugger;
     axios
       .put(url + id, editedDrink)
       .then(response => {

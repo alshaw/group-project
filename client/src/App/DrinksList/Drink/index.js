@@ -26,7 +26,6 @@ class Drink extends Component {
       img,
       glass,
       ingredients,
-      directions
     } = this.props;
 
     if (this.state.isEditing) {
