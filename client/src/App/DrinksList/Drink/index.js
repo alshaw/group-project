@@ -36,22 +36,25 @@ class Drink extends Component {
 
 
     return <div>
-        <Card style={{margin: "10px"}}>
-          <Image src={img} style={{ height: "150px", width: "auto"}}/>
+        <Card color="brown" style={{ margin: "10px" }}>
+          <Image src={img} style={{ height: "150px", width: "auto" }} />
           <Card.Content>
             <Card.Header>{name}</Card.Header>
             <Card.Meta>{glass}</Card.Meta>
             <Card.Description>{ingredients}</Card.Description>
-            <Card.Description></Card.Description>
+            <Card.Description />
           </Card.Content>
           <Card.Content extra>
             <a>
-              <Button onClick={this.toggleEdit}>Edit</Button>
-              <Button onClick={() => deleteDrink(_id)}>Delete</Button>
+              <Button.Group size="medium">
+                <Button onClick={this.toggleEdit}>Edit</Button>
+                <Button.Or />
+                <Button onClick={() => deleteDrink(_id)}>Delete</Button>
+              </Button.Group>
             </a>
           </Card.Content>
         </Card>
-    </div>;
+      </div>;
   }
 }
 
