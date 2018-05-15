@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Playfair+Display+SC|Vast+Shadow');
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
 .mainHeader {
     display: grid;
@@ -138,10 +139,17 @@ input[type=submit] {
 }
 
 .drink-component {
+  font-family: "Lato", sans-serif;
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
+  align-items: center;
+  margin: 10px;
+  /* border: 2px solid gray;
+  padding: 10px;
+  background-color: #F1F1F1; */
 }
+
 
 .edit-form {
   justify-content: center;
