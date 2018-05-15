@@ -82,7 +82,13 @@ input[type=submit] {
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap;
+  align-items: center;
+  margin: 10px;
+  /* border: 2px solid gray;
+  padding: 10px;
+  background-color: #F1F1F1; */
 }
+
 
 .edit-form {
   justify-content: center;

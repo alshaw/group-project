@@ -40,6 +40,7 @@ export function addDrink(newDrink) {
 export function editDrink(editedDrink, id) {
   return dispatch => {
     console.log(editedDrink);
+    debugger;
     axios
       .put(url + id, editedDrink)
       .then(response => {
@@ -57,7 +58,9 @@ export function editDrink(editedDrink, id) {
 }
 
 export function deleteDrink(id) {
+  console.log('sup')
   return dispatch => {
+    console.log('dude')
     axios
       .delete(url + id, id)
       .then(response => {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getDrinks } from "../../redux/drinks";
 import Drink from "./Drink";
+import { Card } from "semantic-ui-react";
 
 class DrinksList extends Component {
   componentDidMount() {
@@ -19,12 +20,16 @@ class DrinksList extends Component {
     //     return num2Total - num1Total;
     //   });
     // }
-    const drinkComponent = data.map((drink, i) => {
+    const drinkComponents = data.map((drink, i) => {
       return <Drink key={i} {...drink} />;
     });
 
-    return <div className="drink-component">{drinkComponent}</div>;
-  }
+    return <div className="drink-component">
+        <Card.Group centered>
+          {drinkComponents}
+        </Card.Group>
+      </div>;
+  } 
 }
 
 export default connect(state => state, { getDrinks })(DrinksList);

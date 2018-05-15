@@ -31,30 +31,28 @@ class Drink extends Component {
 
     if (this.state.isEditing) {
       return <div>
-      <EditForm { ...this.props} options={{ toggle: this.toggleEdit}} />
+        <EditForm { ...this.props} options={{ toggle: this.toggleEdit}} />
       </div>
     }
 
 
     return <div>
-        <Card.Group>
-          <Card>
-            <Image src={img} />
-            <Card.Content>
-              <Card.Header>{name}</Card.Header>
-              <Card.Meta>{glass}</Card.Meta>
-              <Card.Description>{ingredients}</Card.Description>
-              <Card.Description></Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Button onClick={this.toggleEdit}>Edit</Button>
-                <Button onClick={() => deleteDrink()}>Delete</Button>
-              </a>
-            </Card.Content>
-          </Card>
-        </Card.Group>
-      </div>;
+        <Card style={{margin: "10px"}}>
+          <Image src={img} style={{ height: "150px", width: "auto"}}/>
+          <Card.Content>
+            <Card.Header>{name}</Card.Header>
+            <Card.Meta>{glass}</Card.Meta>
+            <Card.Description>{ingredients}</Card.Description>
+            <Card.Description></Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <a>
+              <Button onClick={this.toggleEdit}>Edit</Button>
+              <Button onClick={() => deleteDrink(_id)}>Delete</Button>
+            </a>
+          </Card.Content>
+        </Card>
+    </div>;
   }
 }
 
