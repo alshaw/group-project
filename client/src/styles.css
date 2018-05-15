@@ -36,8 +36,11 @@ footer {
     /* background:  */
 }
 .homeWrapper {
-    /* background: ; */
+    background: url("steel.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
 
 }
 

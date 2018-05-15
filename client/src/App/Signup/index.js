@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import SignupDisplay from "./SignupDisplay";
+import {signup} from "../../redux/auth";
+import {connect} from "react-redux";
 
 class SignupDisplay extends Component {
     constructor() {
@@ -39,16 +41,28 @@ class SignupDisplay extends Component {
         e.preventDefault();
 
         // This is where we will call our signup function from redux
-        alert(JSON.stringify(this.state.inputs));
+        // alert(JSON.stringify(this.state.inputs));
+        this.props.signup(this.state.inputs);
         this.clearInputs();
     }
 
     render() {
+        const authErrorCode = this.props.authErrCode.signup;
+        let errMsg = "";
+        if(authErrorCode < 500 && authErrorCode > 399){
+            errMsg = "invalid username or password";
+        } else if (authErrorCode > 499){
+            errMsg = "server error";
+        }
+
         return (
-            <SignupForm handleChange={this.handleChange.bind(this)} handleSubmit={this.handleSubmit.bind(this)}{...this.state.inputs} />
+            <SignupForm 
+            handleChange={this.handleChange.bind(this)} 
+            handleSubmit={this.handleSubmit.bind(this)}
+            {...this.state.inputs} errMsg = {errMsg} />
         )
     }
 }
 
-export default SignupDisplay;
+export default connect(state => state.user, {signup})(SignupDisplay);
 
