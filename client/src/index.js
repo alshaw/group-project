@@ -7,6 +7,7 @@ import stylesheet from "./styles.css";
 import "semantic-ui-css/components/card.min.css";
 import "semantic-ui-css/components/image.min.css";
 import "semantic-ui-css/components/button.min.css";
+import "semantic-ui-css/components/search.min.css";
 // import "semantic-ui-css/semantic.min.css";
 
 import App from "./App";
