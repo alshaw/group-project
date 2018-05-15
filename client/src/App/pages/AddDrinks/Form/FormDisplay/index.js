@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "semantic-ui-react";
 
 function FormDisplay(props) {
   const { handleChange, handleSubmit, inputs } = props;
@@ -9,7 +10,7 @@ function FormDisplay(props) {
       <input onChange={handleChange} type="text" name="glass" value={glass} placeholder="Type of glass" />
       <textarea onChange={handleChange} type="text" name="ingredients" value={ingredients} placeholder="Ingredients" />
       <textarea onChange={handleChange} type="text" name="directions" value={directions} placeholder="Directions" />
-      <button className="submit">Submit</button>
+      <Button>Submit</Button>
     </form>;
 }
 
