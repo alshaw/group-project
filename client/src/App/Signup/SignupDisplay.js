@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SignupForm(props) {
+function SignupDisplay(props) {
     return (
         <div className="form-wrapper">
             <form onSubmit={props.handleSubmit}>
@@ -26,4 +26,4 @@ function SignupForm(props) {
     )
 }
 
-export default Signup
+export default SignupDisplay
