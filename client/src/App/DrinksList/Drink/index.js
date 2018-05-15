@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Card, Button, Image } from "semantic-ui-react";
+import { Card, Button, Image, Icon } from "semantic-ui-react";
 import { deleteDrink, editDrink } from "../../../redux/drinks";
 import EditForm from "./EditForm";
 
@@ -49,9 +49,9 @@ class Drink extends Component {
               <Button.Group size="medium">
                 <Button onClick={this.toggleEdit}>Edit</Button>
                 <Button.Or />
-                <Button onClick={() => deleteDrink(_id)}>Delete</Button>
-
+                <Button onClick={() => this.props.deleteDrink(_id)}>Delete</Button>
               </Button.Group>
+              <Icon name="heart"></Icon>
             </a>
           </Card.Content>
         </Card>
