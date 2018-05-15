@@ -84,7 +84,7 @@ class EditForm extends Component {
         />
         <input
           onChange={this.handleChange}
-          name="ingredients"
+    g      name="ingredients"
           value={ingredients}
           type="text"
           placeholder="ingredients"
