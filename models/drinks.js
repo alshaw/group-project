@@ -8,6 +8,10 @@ const drinkSchema = new Schema({
     glass: String,
     ingredients: String,
     directions: String,
+    userIds: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment"
+    }],
     commentIds: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"
