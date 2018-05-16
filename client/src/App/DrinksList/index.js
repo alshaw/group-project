@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getDrinks } from "../../redux/drinks";
+import { getDrinks, saveDrink } from "../../redux/drinks";
 import Drink from "./Drink";
 import { Card } from "semantic-ui-react";
 
@@ -14,6 +14,8 @@ class DrinksList extends Component {
     let { data } = this.props.drinks;
     const drinkComponents = data.map((drink, i) => {
       return <Drink key={i} {...drink} />;
+=======
+      return <Drink key={i} {...drink} drink={drink} saveDrink={this.props.saveDrink}/>;
     });
 
     return <div className="drink-component">
@@ -24,4 +26,4 @@ class DrinksList extends Component {
   } 
 }
 
-export default connect(state => state, { getDrinks })(DrinksList);
+export default connect(state => state, { getDrinks, saveDrink })(DrinksList);

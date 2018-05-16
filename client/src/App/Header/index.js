@@ -9,7 +9,7 @@ function Header(props){
                 <Link to = "/" className = "home">home</Link>
                 <Link to = "drinks" className = "addDrink">add drink</Link>
                 <Link to = "/favorites" className = "favorites">favorites</Link>
-                <Link to = "/logout" className = "logout">log out</Link>
+                <Link to = "/login" className = "login">log in</Link>
             </nav>
             
         </div>
