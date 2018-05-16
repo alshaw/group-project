@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { addDrink } from "../../../../redux/drinks";
 import FormDisplay from "./FormDisplay";
 
-
 class Form extends Component {
   constructor(props) {
     super(props);

@@ -11,7 +11,7 @@ function FormDisplay(props) {
       <textarea onChange={handleChange} type="text" name="ingredients" value={ingredients} placeholder="Ingredients" />
       <textarea onChange={handleChange} type="text" name="directions" value={directions} placeholder="Directions" />
       <Button>Submit</Button>
-    </form>;
+    </form>
 }
 
 export default FormDisplay;

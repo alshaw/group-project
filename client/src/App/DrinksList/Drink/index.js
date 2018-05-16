@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Card, Button, Image } from "semantic-ui-react";
+import { Card, Button, Image, Icon } from "semantic-ui-react";
 import { deleteDrink, editDrink } from "../../../redux/drinks";
 import EditForm from "./EditForm";
 
@@ -26,34 +26,35 @@ class Drink extends Component {
       img,
       glass,
       ingredients,
-      directions
     } = this.props;
 
     if (this.state.isEditing) {
       return <div>
-      <EditForm { ...this.props} options={{ toggle: this.toggleEdit}} />
+        <EditForm { ...this.props} options={{ toggle: this.toggleEdit}} />
       </div>
     }
 
 
     return <div>
-        <Card.Group>
-          <Card>
-            <Image src={img} />
-            <Card.Content>
-              <Card.Header>{name}</Card.Header>
-              <Card.Meta>{glass}</Card.Meta>
-              <Card.Description>{ingredients}</Card.Description>
-              <Card.Description></Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
+        <Card color="brown" style={{ margin: "10px" }}>
+          <Image src={img} style={{ height: "150px", width: "auto" }} />
+          <Card.Content>
+            <Card.Header>{name}</Card.Header>
+            <Card.Meta>{glass}</Card.Meta>
+            <Card.Description>{ingredients}</Card.Description>
+            <Card.Description />
+          </Card.Content>
+          <Card.Content extra>
+            <a>
+              <Button.Group size="medium">
                 <Button onClick={this.toggleEdit}>Edit</Button>
-                <Button onClick={() => deleteDrink()}>Delete</Button>
-              </a>
-            </Card.Content>
-          </Card>
-        </Card.Group>
+                <Button.Or />
+                <Button onClick={() => this.props.deleteDrink(_id)}>Delete</Button>
+              </Button.Group>
+              <Icon name="heart"></Icon>
+            </a>
+          </Card.Content>
+        </Card>
       </div>;
   }
 }
