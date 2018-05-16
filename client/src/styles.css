@@ -69,13 +69,13 @@ nav {
 .favorites:hover {
     color: #D2E3F6;
   }
-.login {
+.logout {
     display: grid;
     grid-column: 10/13;
     color: silver;
     text-decoration: none;
 }
-.login:hover {
+.logout:hover {
     color: #D2E3F6;
   }
 footer {
