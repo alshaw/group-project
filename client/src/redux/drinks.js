@@ -57,9 +57,7 @@ export function editDrink(editedDrink, id) {
 }
 
 export function deleteDrink(id) {
-  console.log('sup')
   return dispatch => {
-    console.log('dude')
     axios
       .delete(url + id, id)
       .then(response => {
@@ -74,8 +72,21 @@ export function deleteDrink(id) {
   };
 }
 
+export const saveDrink = (drink) => {
+  console.log("saved drink", saveDrink);
+  return dispatch => {
+    dispatch({
+      type: "SAVE_DRINK",
+      drink: drink
+    })
+  }
+}
+
 export default function drinksReducer(
-  prevState = { data: [], loading: true },
+  prevState = { 
+    data: [], 
+    loading: true 
+  },
   action
 ) {
   switch (action.type) {
@@ -90,6 +101,11 @@ export default function drinksReducer(
         data: [...prevState.data, action.data],
         loading: false
       };
+    case "SAVE_DRINK":
+      return {
+        ...prevState, 
+        savedDrinks: [...prevState.savedDrinks, action.drinks]
+      }
 
     case "EDIT_DRINK":
       return {
