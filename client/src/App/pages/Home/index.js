@@ -5,7 +5,7 @@ import DrinksList from "../../DrinksList";
 
 function Home(props){
     return(
-        <div className = "homeWrapper">
+        <div className = "body-wrapper">
            {/* <SearchBar /> */}
            <DrinksList />
         </div>
