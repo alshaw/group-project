@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addDrink, editDrink } from "../../../../redux/drinks";
+import { Button } from "semantic-ui-react";
 
 class EditForm extends Component {
   constructor(props) {
@@ -52,46 +53,26 @@ class EditForm extends Component {
         img: "",
         glass: "",
         ingredients: "",
-        directions: ""
       }
     });
   }
 
   render() {
-    const { name, img, glass, ingredients, directions } = this.state.inputs;
-    return (
-      <form className="edit-form" onSubmit={this.handleSubmit}>
-        <input
-          onChange={this.handleChange}
-          name="name"
-          value={name}
-          type="text"
-          placeholder="name"
-        />
-        <input
-          onChange={this.handleChange}
-          name="img"
-          value={img}
-          type="text"
-          placeholder="Img"
-        />
-        <input
-          onChange={this.handleChange}
-          name="glass"
-          value={glass}
-          type="text"
-          placeholder="Glass"
-        />
-        <input
-          onChange={this.handleChange}
-          name="ingredients"
-          value={ingredients}
-          type="text"
-          placeholder="ingredients"
-        />
-        <button className="submit">Save Changes</button>
-      </form>
-    );
+    const { name, img, glass, ingredients } = this.state.inputs;
+    return <form className="edit-form" onSubmit={this.handleSubmit}>
+        <input onChange={this.handleChange} name="name" value={name} type="text" placeholder="name" />
+        <input onChange={this.handleChange} name="img" value={img} type="text" placeholder="Img" />
+        <input onChange={this.handleChange} name="glass" value={glass} type="text" placeholder="Glass" />
+        <input onChange={this.handleChange} name="ingredients" value={ingredients} type="text" placeholder="ingredients" />
+        <div className="edit-buttons">
+          <Button basic color="grey">
+            Save Changes
+          </Button>
+          <Button basic color="red">
+            Cancel
+          </Button>
+        </div>
+      </form>;
   }
 }
 

@@ -1,10 +1,15 @@
 Group Project
 =================
 
-The purpose of our application is to help users find and save drink recipes. 
+## The Blender
+Our final project for V School. We created a full stack app that allows users to add, edit and delete drink recipes and save them to a favorties page.
 
-API: 
-We will be using the https://www.thecocktaildb.com/api/json api to pull in recipes. 
+### Technologies used
+
+MongoDB, Express, ReactJS, NodeJS
+
+
+The purpose of our application is to help users find and save drink recipes. 
 
 Users: 
      User

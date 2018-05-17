@@ -10,10 +10,9 @@ class DrinksList extends Component {
     console.log("props", this.props);
   }
   render() {
-    console.log(this.props);
     let { data } = this.props.drinks;
     const drinkComponents = data.map((drink, i) => {
-      return <Drink key={i} {...drink} drink={drink} saveDrink={this.props.saveDrink}/>;
+      return <Drink key={i} {...drink} saveDrink={this.props.saveDrink}/>;
     });
 
     return <div className="drink-component">
