@@ -7,6 +7,20 @@ profileAxios.interceptors.request.use(config => {
     return config;
 })
 
+// let initialState = {  
+//     drinks: [],
+//     user: {
+//         username: "",
+//         admin: false,
+//         _id: ""
+//     },
+//     authErrCode: {
+//         signup: "",
+//         login: ""
+//     },
+//     isAuthenticated: false
+// }
+
 const initialState = {
     loading: true,
     // name: "",
@@ -53,7 +67,7 @@ export default function reducer(state = initialState, action) {
     }
 }
 
-function authenticate(user) {
+export function authenticate(user) {
     return {
         type: "AUTHENTICATE",
         user
@@ -80,46 +94,40 @@ export function signup(credentials) {
     return dispatch => {
         axios.post("/auth/signup", credentials)
             .then(response => {
-                // console.log(response.data);
-                const { token, user } = response.data;
-                localStorage.setItem("token", token);
-                localStorage.setItem("user", JSON.stringify(user));
-                dispatch(authenticate(user));
+                console.log(response.data);
             })
             .catch(err => {
-                // console.error(err);
-                dispatch(authError("signup", err.response.status))
-
+                console.error(err);
             })
     }
 }
+
+export function authError (key, errCode){
+    return {
+        type: "AUTH_ERROR", 
+        key, 
+        errCode
+    }
+}
+
 export function login(credentials) {
     return dispatch => {
         axios.post("/auth/login", credentials)
             .then(response => {
-                const { token, user } = response.data;
-                localStorage.setItem("token", token);
-                localStorage.setItem("user", JSON.stringify(user));
-                dispatch(authenticate(user));
+                const {token, user} = response.data; 
+                localStorage.setItem("token", token); 
+                localStorage.setItem("user", JSON.stringify(user)); 
             })
             .catch(err => {
                 dispatch(authError("login", err.response.status))
             })
     }
-};
+}
 
-export function logout() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+export function logout(){
+    localStorage.removeItem("token"); 
+    localStorage.removeItem("user"); 
     return {
         type: "LOGOUT"
-    }
-};
-
-export function authError(key, errCode) {
-    return {
-        type: "AUTH_ERROR",
-        key,
-        errCode
     }
 }

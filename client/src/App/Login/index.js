@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import LoginForm from "./LoginForm";
-
-import {connect} from "react-redux";
-import {login} from "../../redux/auth";
+import { login, authenticate } from "../../redux/auth";
+import { connect } from "react-redux";
 
 class LoginFormContainer extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             inputs: {
-                name: "",
                 username: "",
                 password: ""
             }
@@ -31,7 +29,6 @@ class LoginFormContainer extends Component {
     clearInputs() {
         this.setState({
             inputs: {
-                name: "",
                 username: "",
                 password: ""
             }
@@ -40,26 +37,21 @@ class LoginFormContainer extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // This is where we will call our signin function from redux
         this.props.login(this.state.inputs);
+        authenticate();
+        // This is where we will call our signin function from redux
+        alert(JSON.stringify(this.state.inputs));
         this.clearInputs();
     }
 
     render() {
-        const authErrCode= this.props.authErrCode.login;
-        let errMsg = "";
-        if(authErrCode < 500 && authErrCode > 399){
-            errMsg = "invalid username or password";
-        } else if (authErrCode > 499){
-            errMsg = "server error";
-        }
         return (
             <LoginForm
                 handleChange={this.handleChange.bind(this)}
                 handleSubmit={this.handleSubmit.bind(this)}
-                {...this.state.inputs} errMsg={errMsg} />
+                {...this.state.inputs} />
         )
     }
 }
 
-export default connect(state => state.user, {login})(LoginFormContainer);
+export default connect(state => state.user,{login, authenticate})(LoginFormContainer);  

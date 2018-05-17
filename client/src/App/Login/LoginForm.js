@@ -1,16 +1,10 @@
-import React from 'react';
+import React from "react";
 
 function LoginForm(props) {
     return (
         <div className="form-wrapper">
             <form onSubmit={props.handleSubmit}>
                 <h3>Log In</h3>
-                <input
-                    onChange={props.handleChange}
-                    value={props.name}
-                    name="name"
-                    type="text"
-                    placeholder="Name"/>
                 <input
                     onChange={props.handleChange}
                     value={props.username}
@@ -24,7 +18,6 @@ function LoginForm(props) {
                     type="password"
                     placeholder="#"/>
                 <button type="submit">Submit</button>
-                {props.errMsg && <p>{props.errMsg}</p> }
             </form>
         </div>
     )
