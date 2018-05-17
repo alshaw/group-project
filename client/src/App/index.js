@@ -12,6 +12,7 @@ import AddDrinks from "./pages/AddDrinks";
 import Favorites from "./pages/Favorites";
 import Signup from "./Signup/";
 import ProtectedRoute from "./ProtectedRoute";
+import DrinksList from "./DrinksList"
 // import Profile from "./Profile";
 import Login from "./Login";
 
@@ -46,6 +47,7 @@ class App extends Component {
                         } />
                         <ProtectedRoute path="/favorites" component={Favorites}/>
                         <ProtectedRoute path="/add-drink" component={AddDrinks}/>
+                        <ProtectedRoute path="/drinks" component={DrinksList}/>
                         {/* <ProtectedRoute path="/profile" component={Profile}/> */}
                     </Switch>
                     }

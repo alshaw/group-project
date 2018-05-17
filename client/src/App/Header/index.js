@@ -17,7 +17,7 @@ function Header(props){
                 {!isAuthenticated && <div className="login"><Link to="/login">Log In</Link></div>}
                 {isAuthenticated && <div className="drinks"><Link to="/drinks">drinks</Link></div> }
                 {isAuthenticated && <div className="favorites"><Link to="/favorites">favorites</Link></div>}
-                {isAuthenticated && <div className="addDrink"><Link to="/favorites">add drink</Link></div>}
+                {isAuthenticated && <div className="addDrink"><Link to="/add-drink">add drink</Link></div>}
                 {isAuthenticated && <div className="logout"><button onClick={props.logout}>Logout</button></div>}
             </nav>
             

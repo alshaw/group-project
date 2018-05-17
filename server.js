@@ -10,8 +10,9 @@ const path = require ("path");
 const logger = require("./middleware/logger.js");
 const drinkRouter = require("./routes/drinks.js");
 const commentRouter = require("./routes/comments.js");
-const userRouter = require ("./routes/users.js"); 
-const authRouter = require("./routes/auth")
+const profileRouter = require ("./routes/profile.js"); 
+const authRouter = require("./routes/auth");
+
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -24,7 +25,7 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 // app.use("/api", expressJwt({secret: process.env.SECRET})); 
 app.use("/api/drinks", drinkRouter);
 app.use("/api/comments", commentRouter);
-app.use("/api/users", userRouter);
+app.use("/api/profile", profileRouter);
 app.use("/auth", authRouter);
 
 mongoose.Promise = global.Promise; 

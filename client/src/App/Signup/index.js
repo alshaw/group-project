@@ -41,7 +41,6 @@ class Signup extends Component {
         e.preventDefault();
         // This is where we will call our signup function from redux
         signup();
-        alert(JSON.stringify(this.state.inputs));
         this.props.signup(this.state.inputs);
         this.clearInputs();
     }

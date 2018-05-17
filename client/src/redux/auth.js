@@ -67,7 +67,7 @@ export default function reducer(state = initialState, action) {
     }
 }
 
-export function authenticate(user) {
+function authenticate(user) {
     return {
         type: "AUTHENTICATE",
         user
@@ -94,18 +94,21 @@ export function signup(credentials) {
     return dispatch => {
         axios.post("/auth/signup", credentials)
             .then(response => {
-                console.log(response.data);
+                const { user, token } = response.data;
+                localStorage.setItem("token", token);
+                localStorage.setItem("user", JSON.stringify(user));
+                dispatch(authenticate(user));
             })
             .catch(err => {
-                console.error(err);
+                dispatch(authError("signup", err.response.status));
             })
     }
 }
 
-export function authError (key, errCode){
+export function authError(key, errCode) {
     return {
-        type: "AUTH_ERROR", 
-        key, 
+        type: "AUTH_ERROR",
+        key,
         errCode
     }
 }
@@ -114,9 +117,10 @@ export function login(credentials) {
     return dispatch => {
         axios.post("/auth/login", credentials)
             .then(response => {
-                const {token, user} = response.data; 
-                localStorage.setItem("token", token); 
-                localStorage.setItem("user", JSON.stringify(user)); 
+                const { token, user } = response.data;
+                localStorage.setItem("token", token);
+                localStorage.setItem("user", JSON.stringify(user));
+                dispatch(authenticate(user));
             })
             .catch(err => {
                 dispatch(authError("login", err.response.status))
@@ -124,9 +128,9 @@ export function login(credentials) {
     }
 }
 
-export function logout(){
-    localStorage.removeItem("token"); 
-    localStorage.removeItem("user"); 
+export function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     return {
         type: "LOGOUT"
     }
