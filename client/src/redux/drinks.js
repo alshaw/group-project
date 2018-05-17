@@ -6,10 +6,9 @@ export function getDrinks() {
     axios
       .get(url)
       .then(response => {
-        console.log(response.data);
         dispatch({
           type: "GET_DRINKS",
-          issue: response.data
+          drink: response.data
         });
       })
       .catch(err => {
@@ -20,7 +19,6 @@ export function getDrinks() {
 
 export function addDrink(newDrink) {
   return dispatch => {
-    console.log(newDrink);
     axios
       .post(url, newDrink)
       .then(response => {
@@ -39,7 +37,6 @@ export function addDrink(newDrink) {
 
 export function editDrink(editedDrink, id) {
   return dispatch => {
-    console.log(editedDrink);
     axios
       .put(url + id, editedDrink)
       .then(response => {
@@ -92,7 +89,7 @@ export default function drinksReducer(
   switch (action.type) {
     case "GET_DRINKS":
       return {
-        data: action.issue,
+        data: action.drink,
         loading: false
       };
 

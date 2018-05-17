@@ -12,7 +12,6 @@ class Form extends Component {
         img: "",
         glass: "",
         ingredients: "",
-        directions: ""
       },
       drinks: []
     };

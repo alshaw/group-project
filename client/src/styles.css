@@ -161,6 +161,17 @@ input[type=submit] {
   border-radius: 5px;
 }
 
+.edit-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-image{
+  height: "150px";
+  width: "auto"
+}
+
+
 .ui.cards {
     padding-left: 4%;
     
