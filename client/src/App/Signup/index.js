@@ -39,9 +39,8 @@ class Signup extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
         // This is where we will call our signup function from redux
-        // alert(JSON.stringify(this.state.inputs));
+        signup();
         this.props.signup(this.state.inputs);
         this.clearInputs();
     }
