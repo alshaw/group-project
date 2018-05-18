@@ -4,7 +4,7 @@ import React from "react";
 function Favorites(props) {
     return (
         <div className = "body-wrapper">
-            <h1>Your saved drinks</h1>
+            <h1 className = "savedDrinks">Your saved drinks</h1>
         </div>
     )
 }

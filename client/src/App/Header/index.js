@@ -13,12 +13,15 @@ function Header(props){
                 {/* <Link to = "drinks" className = "addDrink">add drink</Link> */}
                 {/* <Link to = "/favorites" className = "favorites">favorites</Link> */}
                 {/* <Link to = "/login" className = "login">log in</Link> */}
-                {!isAuthenticated && <div className="signup"><Link to="/">Sign Up</Link></div>}
-                {!isAuthenticated && <div className="login"><Link to="/login">Log In</Link></div>}
-                {isAuthenticated && <div className="drinks"><Link to="/drinks">drinks</Link></div> }
-                {isAuthenticated && <div className="favorites"><Link to="/favorites">favorites</Link></div>}
-                {isAuthenticated && <div className="addDrink"><Link to="/add-drink">add drink</Link></div>}
-                {isAuthenticated && <div className="logout"><button onClick={props.logout}>Logout</button></div>}
+                
+                    {!isAuthenticated && <div className="signup"><Link to="/" >Sign Up</Link></div>}
+                    {!isAuthenticated && <div className="login"><Link to="/login">Log In</Link></div>}
+                <div className = "menuWrapper">
+                    {isAuthenticated && <div className="drinks"><Link to="/drinks" className="drinks1">drinks</Link></div> }
+                    {isAuthenticated && <div className="favorites"><Link to="/favorites" className="favorites1">favorites</Link></div>}
+                    {isAuthenticated && <div className="addDrink"><Link to="/add-drink" className="addDrink1">add drink</Link></div>}
+                    {isAuthenticated && <div className="logout"><button onClick={props.logout} className="logout1">log out</button></div>}
+                </div>
             </nav>
             
         </div>
