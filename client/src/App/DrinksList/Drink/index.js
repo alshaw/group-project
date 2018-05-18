@@ -34,7 +34,8 @@ class Drink extends Component {
     return (
       <div>
         <Card color="teal" style={{ margin: "10px" }}>
-          <Image src={img} className="card-image" />
+          {/* <Image src={img} className="card-image" /> */}
+          <div className="card-image"style={{backgroundImage: `url("${img}")`}}></div>
           <Card.Content>
             <Card.Header>{name}</Card.Header>
             <Card.Meta>{glass}</Card.Meta>
