@@ -27,13 +27,13 @@
     position: absolute;
     text-align: right;
     left: 10%;
-    padding-top: 5px;
+    padding-top: 15px;
 }
 
 nav {
     display: grid;
     grid-area: nav;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr;
     font-family: 'Playfair Display', serif;
     background-color: black;
     width: 100%;
@@ -42,41 +42,85 @@ nav {
     font-size: 14px; 
     bottom: 0;
 }
-.home {
+.menuWrapper {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+/* .signup {
+    display: grid;
+    grid-column: 3/4;
+
+}
+.login {
+    display: grid;
+    grid-column: 8/9;
+} */
+.drinks {
+    display: grid;
+    grid-template-columns: 1fr;
     grid-column: 1/4;
+}
+.drinks1 {
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 1/4; */
     color: silver;
     text-decoration: none;
     
 }
-.home:hover {
-    color: #D2E3F6;
-  }
-.addDrink {
-    display: grid;
-    grid-column: 4/7;
-    color: silver;
-    text-decoration: none;
-}
-.addDrink:hover {
+.drinks1:hover {
     color: #D2E3F6;
   }
 .favorites {
     display: grid;
-    grid-column: 7/10;
+    grid-template-columns: 1fr;
+    grid-column: 4/7;
+}
+.favorites1 {
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-column: 4/7; */
     color: silver;
     text-decoration: none;
+    
+
 }
-.favorites:hover {
+
+.favorites1:hover {
     color: #D2E3F6;
   }
-.login {
+.addDrink {
     display: grid;
-    grid-column: 10/13;
+    grid-column: 7/10;
+    grid-template-columns: 1fr;
+  }
+.addDrink1 {
+    /* display: grid;
+    grid-column: 7/10; */
     color: silver;
     text-decoration: none;
+    /* grid-template-columns: 1fr; */
 }
-.login:hover {
+.addDrink1:hover {
+    color: #D2E3F6;
+  }
+.logout {
+    display: grid;
+    grid-column: 10/13;
+    grid-template-columns: 1fr;
+}
+.logout1 {
+    /* display: grid;
+    grid-column: 10/13; */
+    color: silver;
+    text-decoration: none;
+    background: black;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    /* grid-template-columns: 1fr; */
+}
+.logout1:hover {
     color: #D2E3F6;
   }
 footer {
@@ -103,7 +147,12 @@ footer {
     margin-top: 0px;
     padding-bottom: 30px;
 }
-
+.savedDrinks {
+    color: #1e70bf;
+    font-family: 'Playfair Display', serif;
+    padding-top: 10px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 .input {
   margin: 50px;
   margin-top: 70px;
@@ -180,25 +229,37 @@ input[type=submit] {
     margin-bottom: 10px;
 }
 
-@media (min-width: 600px) {
-    nav {
+/* @media (min-width: 600px) { */
+    /* nav {
+        display: grid;
         text-align: right;
         padding-right: 10px;
-    }
-    .home {
+        grid-template-rows: 1fr;
+    } */
+    /* .menuWrapper {
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .drinks {
+        display: grid;
+        grid-template-columns: 1fr;
         grid-column: 5/7;
     }
     .addDrink {
         display: grid;
+        grid-template-columns: 1fr;
         grid-column: 7/9;  
     }
     .favorites {
         display: grid;
+        grid-template-columns: 1fr;
         grid-column: 9/11;   
     }
-    .login {
+    .logout {
         display: grid;
-        grid-column: 11/13;    
+        grid-template-columns: 1fr;
+        grid-column: 11/13; 
+
     }
-}
+} */

@@ -15,11 +15,15 @@ class DrinksList extends Component {
       return <Drink key={i} {...drink} saveDrink={this.props.saveDrink}/>;
     });
 
-    return <div className="drink-component">
-        <Card.Group centered>
-          {drinkComponents}
-        </Card.Group>
-      </div>;
+    return (
+      <div className = "body-wrapper">
+        <div className="drink-component">
+          <Card.Group centered>
+            {drinkComponents}
+          </Card.Group>
+        </div>;
+      </div>
+    )
   } 
 }
 
